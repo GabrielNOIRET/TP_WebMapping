@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>WebMapping OpenData Melbourne</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://openlayers.org/en/v4.0.1/build/ol.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+   	</head>
+	<body>
+		<header>
+			<h1>titrreeeeeeeeeee</h1>
+			<a id="acceuil" href="http://gn-carto.fr"><img src="images/mini_Logo.png"></a>
+		</header>
+		<nav>
+			<ul id="lien">
+				<a title="Lien_1" href="https://data.melbourne.vic.gov.au/" target=_blank>Plateforme Open DATA</a>
+				<a href="http://www.journaldemontreal.com/2016/03/26/melbourne-ville-la-plus-agreable-au-monde" target=_blank>Article du journal de montreal</a>
+				<a href="https://openlayers.org/en/latest/doc/quickstart.html" target=_blank>OpenLayers</a>
+				<a href="images/maquette.jpg" target=_blank>Voir ma maquette</a>
+			</ul>
+		</nav>
+		<section>
+			
+			<div id="menu">
+				<h2>Les couches</h2>
+				<ol class="checkboxes">
+					<li><input value="choix_1" type="checkbox" onclick="change()" class="checkboxlist" name="choix_1" id="choix_1" />choix 1</li>
+					
+				</ol>
+			
+
+				<div id="madiv"  style="visibility:hidden;"><p>blabla</p></div>
+
+			</div>
+				<div id="page">
+				    <div id="map" class="map"></div>
+					<div id="Formerlakes_wetlands" class="Formerlakes_wetlands"></div>
+				    <script type="text/javascript" src="map.js"></script>
+			</div>
+		</section>
+	</body>
+</html>
