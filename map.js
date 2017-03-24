@@ -15,11 +15,11 @@ var soil_types = new ol.layer.Vector({
  })
 })
 
-var municipal_boundary = new ol.layer.Vector({
+var mask_municipal_boundary = new ol.layer.Vector({
   source: new ol.source.Vector({
-  url:'couches/municipal_boundary.geojson',
+  url:'couches/mask_municipal_boundary.geojson',
   format: new ol.format.GeoJSON()
- })
+  })
 })
 
 var Formerlakes_wetlands = new ol.layer.Vector({
@@ -30,10 +30,11 @@ var Formerlakes_wetlands = new ol.layer.Vector({
  })
 })
 
+
 //-------------------------------carte----------------------------------/
 var map = new ol.Map({
   target: 'map',
-  layers: [ OSM, 
+  layers: [ OSM,
     
   ],
 
@@ -49,6 +50,8 @@ function change_formerlakes_wetlands(){
   if (id_formerlakes_wetlands.checked){map.addLayer(Formerlakes_wetlands)}
   else {map.removeLayer(Formerlakes_wetlands)}}
 
-function change_municipal_boundary(){
-  if (id_municipal_boundary.checked){map.addLayer(municipal_boundary)}
-  else {map.removeLayer(municipal_boundary)}} //-
+function change_mask_municipal_boundary(){
+  if (id_mask_municipal_boundary.checked){map.addLayer(mask_municipal_boundary)}
+  else {map.removeLayer(mask_municipal_boundary)}} 
+
+// ----------------------------style des couches ---------------------------/
