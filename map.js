@@ -45,8 +45,10 @@ var map = new ol.Map({
 
 //-------------------------------Checkbox----------------------------------/
 
-function change(){
-	
-	if (choix_1.checked){map.addLayer(Formerlakes_wetlands)}
-	else {map.removeLayer(Formerlakes_wetlands)}
-}
+function change_formerlakes_wetlands(){
+  if (id_formerlakes_wetlands.checked){map.addLayer(Formerlakes_wetlands)}
+  else {map.removeLayer(Formerlakes_wetlands)}}
+
+function change_municipal_boundary(){
+  if (id_municipal_boundary.checked){map.addLayer(municipal_boundary)}
+  else {map.removeLayer(municipal_boundary)}} //-

@@ -24,19 +24,12 @@
 			
 			<div id="menu">
 				<h2>Les couches</h2>
-				<ol class="checkboxes">
-					<li><input value="choix_1" type="checkbox" onclick="change()" class="checkboxlist" name="choix_1" id="choix_1" />choix 1</li>
-					
-				</ol>
-			
-
-				<div id="madiv"  style="visibility:hidden;"><p>blabla</p></div>
-
+				<li><input type="checkbox" onclick="change_formerlakes_wetlands()" id="id_formerlakes_wetlands" />Formerlakes_wetlands</li>
+				<li><input type="checkbox" onclick="change_municipal_boundary()" id="id_municipal_boundary" />municipal_boundary</li>
 			</div>
-				<div id="page">
-				    <div id="map" class="map"></div>
-					<div id="Formerlakes_wetlands" class="Formerlakes_wetlands"></div>
-				    <script type="text/javascript" src="map.js"></script>
+			<div id="page">
+				<div id="map" class="map"></div>
+				<script type="text/javascript" src="map.js"></script>
 			</div>
 		</section>
 	</body>
