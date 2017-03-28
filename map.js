@@ -8,6 +8,13 @@ var dog = new ol.layer.Vector({
  })
 })
 
+var satelite = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: 'https://ahocevar.com/geoserver/wms',
+    params: {LAYERS: 'nasa:bluemarble', TILED: true}
+  })
+})
+
 var soil_types = new ol.layer.Vector({
   source: new ol.source.Vector({
   url:'couches/soil_types.geojson',
@@ -15,40 +22,46 @@ var soil_types = new ol.layer.Vector({
  })
 })
 
-var mask_municipal_boundary = new ol.layer.Vector({
-  source: new ol.source.Vector({
-  url:'couches/mask_municipal_boundary.geojson',
-  format: new ol.format.GeoJSON()
-  })
-})
-
 var Formerlakes_wetlands = new ol.layer.Vector({
   source: new ol.source.Vector({
   url:'couches/Formerlakes_wetlands.geojson',
   format: new ol.format.GeoJSON()
- })
- /* style: new ol.style.Style({
-	stroke: new ol.style.Stroke({
-		color: '#FF0000',
-		width: 1
-	})
-	fill: new ol.style.Fill({
-		color: 'rgba(255,0,0,0,1)'
-	})
-  })*/
+  }),
+  style: new ol.style.Style({
+    fill: new ol.style.Fill({
+      color: 'blue'
+    }),
+  })
 });
+
+var mask_municipal_boundary = new ol.layer.Vector({
+  source: new ol.source.Vector({
+  url:'couches/mask_municipal_boundary.geojson',
+  format: new ol.format.GeoJSON()
+  }),
+  style: new ol.style.Style({
+    fill: new ol.style.Fill({
+      color: 'rgba(255, 255, 255, 0.8)',
+    }),
+      stroke: new ol.style.Stroke({
+      color: 'grey',
+      width: 1
+    })
+  })
+})
+
 
 
 //-------------------------------carte----------------------------------/
 var map = new ol.Map({
   target: 'map',
-  layers: [ OSM,
+  layers: [OSM, 
     
   ],
 
     view: new ol.View({
-      center: ol.proj.fromLonLat([144.950117, -37.815399]),
-      zoom: 13
+      center: ol.proj.fromLonLat([144.945117, -37.815399]),
+      zoom: 13.2
   })
 });
 
@@ -61,5 +74,13 @@ function change_formerlakes_wetlands(){
 function change_mask_municipal_boundary(){
   if (id_mask_municipal_boundary.checked){map.addLayer(mask_municipal_boundary)}
   else {map.removeLayer(mask_municipal_boundary)}} 
+
+function change_satelite(){
+  if (id_satelite.checked){map.addLayer(satelite)}
+  else {map.removeLayer(satelite)}} 
+
+function change_OSM(){
+  if (id_OSM.checked){map.addLayer(OSM)}
+  else {map.removeLayer(OSM)}}
 
 // ----------------------------style des couches ---------------------------/

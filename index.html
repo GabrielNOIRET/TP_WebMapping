@@ -6,10 +6,11 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<script src="https://openlayers.org/en/v4.0.1/build/ol.js" type="text/javascript"></script>
 		<link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+		<!-- <meta http-equiv="Refresh" content="10; url=index.html"> -->
    	</head>
 	<body>
 		<header>
-			<h1>titrreeeeeeeeeee</h1>
+			<h1>Melbourne, ville la plus agréable au monde</h1>
 			<a id="acceuil" href="http://gn-carto.fr"><img src="images/mini_Logo.png"></a>
 		</header>
 		<nav>
@@ -26,9 +27,21 @@
 				<h2>Les couches</h2>
 				<li><input type="checkbox" onclick="change_formerlakes_wetlands()" id="id_formerlakes_wetlands" />Formerlakes_wetlands</li>
 				<li><input type="checkbox" onclick="change_mask_municipal_boundary()" id="id_mask_municipal_boundary" />mask_municipal_boundary</li>
+				
 			</div>
 			<div id="page">
 				<div id="map" class="map"></div>
+				<div id="fond">
+					
+					<label>
+						<input type="radio" name="satelite" id="id_satelite" onclick="change_satelite()"/> Fond satélite
+					</label>
+
+					<label>
+						<input type="radio" onclick="change_OSM()"id="id_OSM" />Fond OSM
+					</label>
+					
+				</div>
 				<script type="text/javascript" src="map.js"></script>
 			</div>
 		</section>
