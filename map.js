@@ -23,12 +23,20 @@ var mask_municipal_boundary = new ol.layer.Vector({
 })
 
 var Formerlakes_wetlands = new ol.layer.Vector({
-  target: 'Formerlakes_wetlands',
   source: new ol.source.Vector({
   url:'couches/Formerlakes_wetlands.geojson',
   format: new ol.format.GeoJSON()
  })
-})
+ /* style: new ol.style.Style({
+	stroke: new ol.style.Stroke({
+		color: '#FF0000',
+		width: 1
+	})
+	fill: new ol.style.Fill({
+		color: 'rgba(255,0,0,0,1)'
+	})
+  })*/
+});
 
 
 //-------------------------------carte----------------------------------/
